@@ -49,6 +49,31 @@ return true;</m_strEventCode>
 					</m_caption>
 					<m_strDotNetLanguage>cs</m_strDotNetLanguage>
 				</v>
+				<v>
+					<m_isRunTime>0</m_isRunTime>
+					<m_strPage>Add page</m_strPage>
+					<m_strName>EVENT_BEFOREPROCESS_ADD</m_strName>
+					<m_strEventCode>if($_SESSION["email"] =='')
+{
+	// if record exists do something
+
+	//**********  Redirect to another page  ************
+	header("Location:  register.php");
+exit();
+}
+
+
+// Place event code here.
+// Use "Add Action" button to add code snippets.</m_strEventCode>
+					<m_strEventID>EVENT_BEFOREPROCESS_ADD</m_strEventID>
+					<m_strWidgetID></m_strWidgetID>
+					<sub />
+					<m_caption>
+						<text></text>
+						<nameType>Text</nameType>
+					</m_caption>
+					<m_strDotNetLanguage>cs</m_strDotNetLanguage>
+				</v>
 			</m_arrEventHandlers>
 			<DiagramCoordinates>
 				<x1>227</x1>
@@ -205,7 +230,17 @@ EmailID</m_sqlHead>
 			</m_strChartYAxisLabel>
 			<m_arrMasterTables />
 			<m_arrDeletedMasterTables />
-			<m_controlLinks />
+			<m_controlLinks>
+				<v>
+					<page>Add page</page>
+					<pageId>add</pageId>
+					<id>advt_subscription_captcha</id>
+					<pageFile>advt_subscription_add.htm</pageFile>
+					<tabId></tabId>
+					<mobile>0</mobile>
+					<brickBased>0</brickBased>
+				</v>
+			</m_controlLinks>
 			<m_deletedLinks />
 			<m_arrReportGroupFields />
 			<m_arrChartDataSeries />
@@ -2815,7 +2850,17 @@ isemailverified</m_sqlHead>
 			</m_strChartYAxisLabel>
 			<m_arrMasterTables />
 			<m_arrDeletedMasterTables />
-			<m_controlLinks />
+			<m_controlLinks>
+				<v>
+					<page>Add page</page>
+					<pageId>add</pageId>
+					<id>directory_newreg_captcha</id>
+					<pageFile>directory_newreg_add.htm</pageFile>
+					<tabId></tabId>
+					<mobile>0</mobile>
+					<brickBased>0</brickBased>
+				</v>
+			</m_controlLinks>
 			<m_deletedLinks />
 			<m_arrReportGroupFields />
 			<m_arrChartDataSeries />
@@ -49709,7 +49754,7 @@ INNER JOIN lookup_adtypes ON advt_rates.ADVTType = lookup_adtypes.ID</m_strFrom>
 			<m_lastDbSyncTime>1440102136</m_lastDbSyncTime>
 			<m_strDBPath>db</m_strDBPath>
 			<m_bUseServerMapPath>1</m_bUseServerMapPath>
-			<m_strCustomDBConnection />
+			<m_strCustomDBConnection></m_strCustomDBConnection>
 			<m_CustomDBConnections />
 			<m_connStringType>mysql</m_connStringType>
 			<m_strConnectInfo1>localhost</m_strConnectInfo1>
@@ -52491,6 +52536,44 @@ DisplayCAPTCHA();</m_strEventCode>
 			</m_caption>
 			<m_strDotNetLanguage />
 		</v>
+		<v>
+			<m_isRunTime>0</m_isRunTime>
+			<m_strPage>List page</m_strPage>
+			<m_strName>directory_newreg_captcha</m_strName>
+			<m_strEventCode>
+
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+
+DisplayCAPTCHA();</m_strEventCode>
+			<m_strEventID>EVENT_CAPTCHA</m_strEventID>
+			<m_strWidgetID></m_strWidgetID>
+			<sub />
+			<m_caption>
+				<text></text>
+				<nameType>Text</nameType>
+			</m_caption>
+			<m_strDotNetLanguage></m_strDotNetLanguage>
+		</v>
+		<v>
+			<m_isRunTime>0</m_isRunTime>
+			<m_strPage>List page</m_strPage>
+			<m_strName>advt_subscription_captcha</m_strName>
+			<m_strEventCode>
+
+// Place event code here.
+// Use "Add Action" button to add code snippets.
+
+DisplayCAPTCHA();</m_strEventCode>
+			<m_strEventID>EVENT_CAPTCHA</m_strEventID>
+			<m_strWidgetID></m_strWidgetID>
+			<sub />
+			<m_caption>
+				<text></text>
+				<nameType>Text</nameType>
+			</m_caption>
+			<m_strDotNetLanguage></m_strDotNetLanguage>
+		</v>
 	</m_controlHandlers>
 	<m_arrEventHandlers />
 	<m_ProjectLabels>
@@ -53011,8 +53094,8 @@ DisplayCAPTCHA();</m_strEventCode>
 		<m_bUseBuiltInMailer>1</m_bUseBuiltInMailer>
 	</Registration>
 	<BuildInfo>
-		<m_nBuildTimeLow>-1833186880</m_nBuildTimeLow>
-		<m_nBuildTimeHigh>30464904</m_nBuildTimeHigh>
+		<m_nBuildTimeLow>1564213680</m_nBuildTimeLow>
+		<m_nBuildTimeHigh>30464920</m_nBuildTimeHigh>
 		<nonProcessFiles />
 		<m_bCompressJs>1</m_bCompressJs>
 		<builtFiles>
@@ -55314,7 +55397,7 @@ DisplayCAPTCHA();</m_strEventCode>
 			</v>
 			<v>
 				<filename>C:\EasyPHP\data\localweb\wbindustrialdirectory.com\new_registration\styles\BoldOrange</filename>
-				<source />
+				<source></source>
 			</v>
 			<v>
 				<filename>C:\EasyPHP\data\localweb\wbindustrialdirectory.com\new_registration\include\runnerJS\RunnerAll.js</filename>
@@ -55507,12 +55590,12 @@ DisplayCAPTCHA();</m_strEventCode>
 	<m_strAdminUserID />
 	<m_securityBusinessTemplate />
 	<m_strOutputDir>C:\EasyPHP\data\localweb\wbindustrialdirectory.com\new_registration</m_strOutputDir>
-	<m_strURL />
+	<m_strURL></m_strURL>
 	<m_compressJSFiles>1</m_compressJSFiles>
 	<m_strRTEType>BASIC</m_strRTEType>
 	<m_strTempDir>tmp</m_strTempDir>
 	<m_strMYSQLNames>utf8</m_strMYSQLNames>
-	<m_strLastDotNetLanguage>cs</m_strLastDotNetLanguage>
+	<m_strLastDotNetLanguage></m_strLastDotNetLanguage>
 	<m_visualStudioVersion>10</m_visualStudioVersion>
 	<m_visualStudioSolutionFormatVersion>11</m_visualStudioSolutionFormatVersion>
 	<m_visualStudioVersionYear>2010</m_visualStudioVersionYear>
@@ -55523,7 +55606,7 @@ DisplayCAPTCHA();</m_strEventCode>
 	<m_bWebReports>0</m_bWebReports>
 	<m_strWRConnectionID />
 	<m_strWRAdminPassword>webreports</m_strWRAdminPassword>
-	<m_projectBuildNumber>82</m_projectBuildNumber>
+	<m_projectBuildNumber>86</m_projectBuildNumber>
 	<m_FTPlocation>wbindustrialdirectory.com</m_FTPlocation>
 	<m_FrontPagelocation />
 	<FTPFiles />

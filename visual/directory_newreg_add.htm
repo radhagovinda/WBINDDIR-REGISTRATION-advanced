@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <HTML {$html_attrs}><HEAD> 
-<META http-equiv="X-UA-Compatible" content="IE=Edge"> <TITLE>{$pagetitle} </TITLE> 
+<META http-equiv="X-UA-Compatible" content="IE=Edge"> <TITLE> Registration - WB 
+Industrial Directory{$pagetitle}--> </TITLE> 
 <META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <LINK href="styles/default.css" rel="stylesheet" type="text/css"> {BEGIN rtlCSS}<LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">{END rtlCSS} {BEGIN styleCSSFiles}<LINK href="{$stylepath}" rel="stylesheet" type="text/css">{END styleCSSFiles} {BEGIN pageCSSFiles}<LINK href="{$pagestylepath}" rel="stylesheet" type="text/css">{END pageCSSFiles} 
 <META name="GENERATOR" content="MSHTML 11.00.9600.17963"> </HEAD> 
@@ -14,8 +15,8 @@
 {BEGIN container_add}
 <DIV class="rnr-c rnr-cv rnr-c-add">
 {BEGIN addheader}<DIV class="rnr-brickcontents style2 rnr-b-addheader {$brickclass_addheader}"><SPAN>
-<H1>
-{$pagetitlelabel directory_newreg add} </H1></SPAN> </DIV>
+<H1>       Registration Form<!--{$pagetitlelabel directory_newreg add}--> 
+</H1></SPAN> </DIV>
 {END addheader}{BEGIN message_block}<DIV class="rnr-brickcontents style1 rnr-b-message {$brickclass_message}">
 <DIV class="rnr-message">
 {$message} </DIV></DIV>
@@ -33,12 +34,15 @@
     <TD rowspan="1" colspan="2">
       {$Section Contact_Details1} &nbsp;</TD></TR>
   <TR>
-    <TD rowspan="1" colspan="2"><FONT color="#ff0000">- I have read your 
-      <A href="../advt-terms-and-conditions.php">terms 
-      and conditions</A>&nbsp;&amp; 
-      fully agreed with the same<BR>- I am legally empowered to submit the above 
-      advertisement on wbindustrialdirectory.com</FONT> </TD></TR></TBODY></TABLE> 
-</DIV>
+    <TD rowspan="1" 
+colspan="2">
+      {$event directory_newreg_captcha}</TD></TR>
+  <TR>
+    <TD rowspan="1" colspan="2"><FONT color="#ff0000">- I have read your <A 
+      href="../advt-terms-and-conditions.php"> terms and conditions </A>   
+      &nbsp;&amp; fully agreed with the same<BR>- I am legally empowered to 
+      submit the above advertisement on wbindustrialdirectory.com</FONT> 
+  </TD></TR></TBODY></TABLE> </DIV>
 {BEGIN addbuttons}<DIV class="rnr-brickcontents style2 rnr-b-addbuttons {$brickclass_addbuttons}">{BEGIN save_button}<A class="rnr-button main" id="saveButton{$id}" href="#"> Save &amp; Proceed 
 &gt;&gt; </A> {END save_button}{BEGIN reset_button}<A class="rnr-button" id="resetButton{$id}" href="#"> Reset </A> {END reset_button}{BEGIN cancel_button}<A class="rnr-button" id="cancelButton{$id}" href="#"> 
 Cancel </A> {END cancel_button}{BEGIN back_button}<A class="rnr-button" id="backButton{$id}" href="#"> Back to list </A> {END back_button}{BEGIN backToMenu_button}<A class="rnr-button" id="backToMenuButton{$id}" href="#"> Back to menu </A> 
