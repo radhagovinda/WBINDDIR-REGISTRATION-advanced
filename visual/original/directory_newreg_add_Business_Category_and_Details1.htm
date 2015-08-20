@@ -1,0 +1,65 @@
+<div {$pageattrs}>
+
+{BEGIN container_1}
+
+
+
+<table class="fieldGrid">
+{BEGIN category_tabfieldblock}
+<tr class="{$fielddispclass_category}" data-fieldname="category">
+	<td class="style1 rnr-label">
+		{BEGIN category_label}{$label directory_newreg category}{END category_label}
+	</td>
+	<td class="rnr-control style3">
+		{$category_editcontrol}&nbsp;
+	</td>
+</tr>
+{END category_tabfieldblock}
+{BEGIN subcategory_tabfieldblock}
+<tr class="{$fielddispclass_subcategory}" data-fieldname="subcategory">
+	<td class="style1 rnr-label">
+		{BEGIN subcategory_label}{$label directory_newreg subcategory}{END subcategory_label}
+	</td>
+	<td class="rnr-control style3">
+		{$subcategory_editcontrol}&nbsp;
+	</td>
+</tr>
+{END subcategory_tabfieldblock}
+{BEGIN productorservice_tabfieldblock}
+<tr class="{$fielddispclass_productorservice}" data-fieldname="productorservice">
+	<td class="style1 rnr-label">
+		{BEGIN productorservice_label}{$label directory_newreg productorservice}{END productorservice_label}
+	</td>
+	<td class="rnr-control style3">
+		{$productorservice_editcontrol}&nbsp;
+	</td>
+</tr>
+{END productorservice_tabfieldblock}
+{BEGIN description_tabfieldblock}
+<tr class="{$fielddispclass_description}" data-fieldname="description">
+	<td class="style1 rnr-label">
+		{BEGIN description_label}{$label directory_newreg description}{END description_label}
+	</td>
+	<td class="rnr-control style3">
+		{$description_editcontrol}&nbsp;
+	</td>
+</tr>
+{END description_tabfieldblock}
+{BEGIN keywords_tabfieldblock}
+<tr class="{$fielddispclass_keywords}" data-fieldname="keywords">
+	<td class="style1 rnr-label">
+		{BEGIN keywords_label}{$label directory_newreg keywords}{END keywords_label}
+	</td>
+	<td class="rnr-control style3">
+		{$keywords_editcontrol}&nbsp;
+	</td>
+</tr>
+{END keywords_tabfieldblock}
+</table>
+
+
+
+
+{END container_1}
+
+</div>

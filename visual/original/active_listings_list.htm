@@ -1,0 +1,525 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+		{BEGIN pageCSSFiles}
+		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
+		{END pageCSSFiles}
+	</head>
+	
+	<body class="{$stylename} function-list" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+	<div class="rnr-page">
+		<div class="rnr-top {$blockclass_top}">
+			
+
+
+
+
+
+{BEGIN container_search}
+<div class="rnr-c rnr-ch rnr-c-search">
+
+{BEGIN searchform_block}
+<div  class="style1 rnr-bl rnr-b-search {$brickclass_search}">	<span>
+		{BEGIN searchform_text}
+		<input type="text" {$searchfor_attrs} size="25">
+		{END searchform_text}
+		{BEGIN searchform_search}
+			<a href="#" class="rnr-button img" data-icon="search" {$searchbutton_attrs}></a>
+		{END searchform_search}
+		{BEGIN searchform_showall}	
+		<a href="#" class="rnr-button" {$showAllCont_attrs} {$showallbutton_attrs}>Show all</a>
+		{END searchform_showall}
+	</span>
+</div>
+{END searchform_block}
+
+
+{BEGIN searchformbuttons_block}
+<div  class="style1 rnr-bl rnr-b-search_buttons {$brickclass_search_buttons}">{BEGIN searchPanelTopButtons}
+<span>
+	<a href="#" class="rnr-button img" id="showSrchWin{$id}" data-icon="panelfloat" {$showHideSearchWin_attrs}></a>
+	<a href="#" class="rnr-button img" id="showOptPanel{$id}" data-icon="paneldown" {$showHideSearchPanel_attrs}></a>
+</span>
+{END searchPanelTopButtons}
+</div>
+{END searchformbuttons_block}
+
+
+{BEGIN searchsaving_block}
+<div  class="style1 rnr-bl rnr-b-search_saving_buttons {$brickclass_search_saving_buttons}"></div>
+{END searchsaving_block}
+
+<div class="rnr-hfiller"></div>
+{BEGIN details_block}
+<div  class="style1 rnr-br rnr-b-details_found {$brickclass_details_found}">	<span {$details_attrs}>
+			Details found: <b><span class="rnr-details_found_count">{$records_found}</span></b>
+	</span>
+</div>
+{END details_block}
+
+
+{BEGIN pages_block}
+<div  class="style1 rnr-br rnr-b-page_of {$brickclass_page_of}">	<span {$pages_attrs}>
+		Page <b>{$page}</b> of <b>{$maxpages}</b>
+	</span>
+
+</div>
+{END pages_block}
+
+
+{BEGIN recordspp_block}
+<div  class="style1 rnr-br rnr-b-recsperpage {$brickclass_recsperpage}">	<span id="recordspp_block{$id}" name="recordspp_block{$id}">
+			Records Per Page:&nbsp;{$recsPerPage}
+	</span>	
+</div>
+{END recordspp_block}
+
+
+</div>
+{END container_search}
+
+
+		</div>
+		<div class="rnr-middle">
+			<div class="rnr-left {$blockclass_left}">
+				
+
+
+
+{BEGIN container_logg}
+<div class="rnr-c rnr-cv rnr-c-logg">
+
+{BEGIN security_block}
+<div  class="rnr-brickcontents style1 rnr-b-loggedas {$brickclass_loggedas}"><div id="login_block{$id}">
+	{BEGIN loggedas_message}
+	<span>Logged on as&nbsp;<b>{$username}</b><br><br>
+	</span>
+	{END loggedas_message}
+	{BEGIN guestloginbutton}
+	<span>
+	<a href="#" class="rnr-button" {$guestloginlink_attrs}>Login</a>
+	</span>
+	{END guestloginbutton}
+	{BEGIN logoutbutton}
+	<a class="rnr-button" href="login.php?a=logout" {$logoutlink_attrs}>Log out</a>
+	{END logoutbutton}
+<!-- Permissions -->
+{BEGIN changepwd_link}
+<div>
+	<a class="rnr-button" href="changepwd.php" {$changepwdlink_attrs}>Change password</a>
+</div>
+{END changepwd_link}
+</div>
+</div>{END security_block}
+
+
+</div>
+{END container_logg}
+
+
+
+{BEGIN container_left}
+<div class="rnr-c rnr-cv rnr-c-left">
+
+{BEGIN searchPanel}
+<div  class="rnr-brickcontents style1 rnr-b-searchpanel {$brickclass_searchpanel}"><div class="searchPanelContainer">
+<div class="searchOptions bottomPanelBorder" {$srchOpt_attrs}>
+	
+	<!-- Search panel content -->
+	<div class="srchCritTop" style="display: none;">
+		Criteria:&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$all_checkbox}>&nbsp;{BEGIN all_checkbox_label}<span>all</span>{END all_checkbox_label}
+		&nbsp;&nbsp;&nbsp;
+		<input type="radio" name="srchType{$id}" class="rnr-radio-button" {$any_checkbox}>&nbsp;{BEGIN any_checkbox_label}<span>any</span>{END any_checkbox_label}
+	</div>
+	
+	<div class="addOption">
+		<span class="rnr-buttons-group">
+			<a href="#" id="showHideControlChooseMenu{$id}" class="rnr-button" {$showHideCtrls_attrs}>Add field</a>
+		</span>
+		
+		<a href="#" id="showHideSearchType{$id}" class="rnr-button" {$showHideCtrlsOpt_attrs}>{$showHideOpt_mess}</a>
+	</div>
+	
+
+	<table class="controlsBlock {$controls_block_class}">
+				{BEGIN searchCtrlBlock}
+		<tr class="srchPanelRow" {$filterRow_attrs}>
+			<td class="srchPanelCell">{$delCtrlButt}</td>	
+			<td class="srchPanelCell">{$fLabel}:&nbsp;</td>
+			<td class="srchPanelCell srchPanelCell2">
+				<div class="rnr-searchtype">{$searchtype}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol}</div>
+				<div class="rnr-searchcontrol">{$searchcontrol1}</div>
+			</td>	
+		</tr>
+		{END searchCtrlBlock}
+	</table>	
+
+
+	
+	<div class="bottomSearchButt" align="left" {$bottomSearchButt_attrs}>
+		<a href="#" class="rnr-button" id="searchButton{$id}" {$searchbutton_attrs}>Search</a>
+	</div>
+</div>
+
+</div></div>{END searchPanel}
+
+
+
+{BEGIN menu_block}
+{$menu main}
+{END menu_block}
+
+
+</div>
+{END container_left}
+
+
+			</div>
+			<div class="rnr-center {$blockclass_center}">
+				
+
+
+
+{BEGIN container_message}
+<div class="rnr-c rnr-ch rnr-c-message">
+
+{BEGIN message_block}
+<div  class="style1 rnr-bc rnr-b-message {$brickclass_message}"><div class="rnr-message">{$message}</div></div>
+{END message_block}
+
+
+</div>
+{END container_message}
+
+
+
+{BEGIN container_grid}
+
+
+{BEGIN grid_block}
+						<table class="rnr-c rnr-cont rnr-c-grid rnr-b-grid rnr-gridtable  hoverable " cellpadding="0" >
+						<thead>
+															{BEGIN grid_header}
+								<tr class="rnr-toprow style1 {$gridHeader_class}" >
+									{BEGIN record_header}
+									{BEGIN listIcons_column}
+									<th iEditCont="all">&nbsp;</th>
+									{END listIcons_column}	
+
+									
+																																			{BEGIN companyname_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$companyname_class}">
+									{BEGIN companyname_fieldheader}
+																				<span {$companyname_orderlinkattrs}>
+											{$label active_listings companyname}
+										</span>
+									{END companyname_fieldheader}
+									</th>
+									{END companyname_fieldheadercolumn}
+
+																	{BEGIN name_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$name_class}">
+									{BEGIN name_fieldheader}
+																				<span {$name_orderlinkattrs}>
+											{$label active_listings name}
+										</span>
+									{END name_fieldheader}
+									</th>
+									{END name_fieldheadercolumn}
+
+																	{BEGIN address_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$address_class}">
+									{BEGIN address_fieldheader}
+																				<span {$address_orderlinkattrs}>
+											{$label active_listings address}
+										</span>
+									{END address_fieldheader}
+									</th>
+									{END address_fieldheadercolumn}
+
+																	{BEGIN address2_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$address2_class}">
+									{BEGIN address2_fieldheader}
+																				<span {$address2_orderlinkattrs}>
+											{$label active_listings address2}
+										</span>
+									{END address2_fieldheader}
+									</th>
+									{END address2_fieldheadercolumn}
+
+																	{BEGIN location_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$location_class}">
+									{BEGIN location_fieldheader}
+																				<span {$location_orderlinkattrs}>
+											{$label active_listings location}
+										</span>
+									{END location_fieldheader}
+									</th>
+									{END location_fieldheadercolumn}
+
+																	{BEGIN city_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$city_class}">
+									{BEGIN city_fieldheader}
+																				<span {$city_orderlinkattrs}>
+											{$label active_listings city}
+										</span>
+									{END city_fieldheader}
+									</th>
+									{END city_fieldheadercolumn}
+
+																	{BEGIN pin_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$pin_class}">
+									{BEGIN pin_fieldheader}
+																				<span {$pin_orderlinkattrs}>
+											{$label active_listings pin}
+										</span>
+									{END pin_fieldheader}
+									</th>
+									{END pin_fieldheadercolumn}
+
+																	{BEGIN phone_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$phone_class}">
+									{BEGIN phone_fieldheader}
+																				<span {$phone_orderlinkattrs}>
+											{$label active_listings phone}
+										</span>
+									{END phone_fieldheader}
+									</th>
+									{END phone_fieldheadercolumn}
+
+																	{BEGIN phone1_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$phone1_class}">
+									{BEGIN phone1_fieldheader}
+																				<span {$phone1_orderlinkattrs}>
+											{$label active_listings phone1}
+										</span>
+									{END phone1_fieldheader}
+									</th>
+									{END phone1_fieldheadercolumn}
+
+																	{BEGIN mobile_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mobile_class}">
+									{BEGIN mobile_fieldheader}
+																				<span {$mobile_orderlinkattrs}>
+											{$label active_listings mobile}
+										</span>
+									{END mobile_fieldheader}
+									</th>
+									{END mobile_fieldheadercolumn}
+
+																	{BEGIN mobile1_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$mobile1_class}">
+									{BEGIN mobile1_fieldheader}
+																				<span {$mobile1_orderlinkattrs}>
+											{$label active_listings mobile1}
+										</span>
+									{END mobile1_fieldheader}
+									</th>
+									{END mobile1_fieldheadercolumn}
+
+																	{BEGIN fax_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$fax_class}">
+									{BEGIN fax_fieldheader}
+																				<span {$fax_orderlinkattrs}>
+											{$label active_listings fax}
+										</span>
+									{END fax_fieldheader}
+									</th>
+									{END fax_fieldheadercolumn}
+
+																	{BEGIN email_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$email_class}">
+									{BEGIN email_fieldheader}
+																				<span {$email_orderlinkattrs}>
+											{$label active_listings email}
+										</span>
+									{END email_fieldheader}
+									</th>
+									{END email_fieldheadercolumn}
+
+																	{BEGIN url_fieldheadercolumn}
+									<th class="rnr-gridfieldlabel {$url_class}">
+									{BEGIN url_fieldheader}
+																				<span {$url_orderlinkattrs}>
+											{$label active_listings url}
+										</span>
+									{END url_fieldheader}
+									</th>
+									{END url_fieldheadercolumn}
+
+
+									
+									<th class="rnr-edge">&nbsp;</th>
+									{BEGIN endrecordheader_block}
+									<th class="rnr-cs">&nbsp;</th>
+									
+									{END endrecordheader_block}
+									
+									{END record_header}
+									
+								</tr>
+								{END grid_header}
+
+						</thead>
+						<tbody>	
+															{BEGIN grid_row}
+								<tr class="rnr-row style1 {$rowclass}" {$rowattrs} {$rowstyle}>
+									{BEGIN grid_record}
+									{BEGIN listIcons_column}
+									<td class="rnr-cc rnr-bc rnr-icons" iEditCont="all" {$rowstyle} {$recordattrs}>
+									
+									
+									
+																		</td>	
+									{END listIcons_column}	
+
+									
+
+										{BEGIN companyname_fieldcolumn}
+	<td class="{$companyname_class}" {$companyname_style} {$recordattrs}>
+		{$companyname_value}
+	</td>
+{END companyname_fieldcolumn}
+
+	{BEGIN name_fieldcolumn}
+	<td class="{$name_class}" {$name_style} {$recordattrs}>
+		{$name_value}
+	</td>
+{END name_fieldcolumn}
+
+	{BEGIN address_fieldcolumn}
+	<td class="{$address_class}" {$address_style} {$recordattrs}>
+		{$address_value}
+	</td>
+{END address_fieldcolumn}
+
+	{BEGIN address2_fieldcolumn}
+	<td class="{$address2_class}" {$address2_style} {$recordattrs}>
+		{$address2_value}
+	</td>
+{END address2_fieldcolumn}
+
+	{BEGIN location_fieldcolumn}
+	<td class="{$location_class}" {$location_style} {$recordattrs}>
+		{$location_value}
+	</td>
+{END location_fieldcolumn}
+
+	{BEGIN city_fieldcolumn}
+	<td class="{$city_class}" {$city_style} {$recordattrs}>
+		{$city_value}
+	</td>
+{END city_fieldcolumn}
+
+	{BEGIN pin_fieldcolumn}
+	<td class="{$pin_class}" {$pin_style} {$recordattrs}>
+		{$pin_value}
+	</td>
+{END pin_fieldcolumn}
+
+	{BEGIN phone_fieldcolumn}
+	<td class="{$phone_class}" {$phone_style} {$recordattrs}>
+		{$phone_value}
+	</td>
+{END phone_fieldcolumn}
+
+	{BEGIN phone1_fieldcolumn}
+	<td class="{$phone1_class}" {$phone1_style} {$recordattrs}>
+		{$phone1_value}
+	</td>
+{END phone1_fieldcolumn}
+
+	{BEGIN mobile_fieldcolumn}
+	<td class="{$mobile_class}" {$mobile_style} {$recordattrs}>
+		{$mobile_value}
+	</td>
+{END mobile_fieldcolumn}
+
+	{BEGIN mobile1_fieldcolumn}
+	<td class="{$mobile1_class}" {$mobile1_style} {$recordattrs}>
+		{$mobile1_value}
+	</td>
+{END mobile1_fieldcolumn}
+
+	{BEGIN fax_fieldcolumn}
+	<td class="{$fax_class}" {$fax_style} {$recordattrs}>
+		{$fax_value}
+	</td>
+{END fax_fieldcolumn}
+
+	{BEGIN email_fieldcolumn}
+	<td class="{$email_class}" {$email_style} {$recordattrs}>
+		{$email_value}
+	</td>
+{END email_fieldcolumn}
+
+	{BEGIN url_fieldcolumn}
+	<td class="{$url_class}" {$url_style} {$recordattrs}>
+		{$url_value}
+	</td>
+{END url_fieldcolumn}
+
+
+									<td class="rnr-edge" {$recordattrs}>&nbsp;</td>
+									{BEGIN endrecord_block}
+									<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
+									{END endrecord_block}
+																	
+									{END grid_record}
+
+								</tr>
+								{END grid_row}
+															
+						</tbody>
+					</table>
+					
+
+{END grid_block}
+
+
+
+{END container_grid}
+
+
+
+{BEGIN container_pagination}
+<div class="rnr-c rnr-ch rnr-c-pagination">
+
+{BEGIN pagination_block}
+<div  class="style1 rnr-bc rnr-b-pagination {$brickclass_pagination}">{$pagination}</div>
+{END pagination_block}
+
+
+</div>
+{END container_pagination}
+
+
+			</div>
+			<div class="rnr-right {$blockclass_right}">
+				
+			</div>
+		</div>
+		<div class="rnr-bottom {$blockclass_bottom}">
+			<!--%%bottom%%-->
+		</div>
+	</div>
+		
+		{$footer}
+	{END body}
+	</body>
+</html>
